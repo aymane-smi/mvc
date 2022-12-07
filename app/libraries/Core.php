@@ -11,7 +11,6 @@
                 $this->currentController = ucwords($url[0]);
                 unset($url[0]);
             }
-
             require_once '../app/controllers/'.$this->currentController.'.php';
 
             $this->currentController = new $this->currentController;
