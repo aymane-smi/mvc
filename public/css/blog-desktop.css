@@ -1,0 +1,49 @@
+@media screen and (min-width: 1000px){
+    /*MAIN STYLING*/
+
+h1{
+    color: var(--white);
+    font-size: var(--title);
+    margin-top: 30px;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 120px;
+}
+
+/*ROW STYLING*/
+
+.row-blog{
+    margin-top: 80px;
+}
+
+/*CARD STYLING*/
+
+.card{
+    margin-bottom: 60px;
+    height: 346px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    background-color: var(--white);
+}
+
+.info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 40px;
+    margin-left: 40px;
+    align-items: flex-start;
+    font-weight: 600;
+    font-size: var(--normal);
+}
+
+.article-image{
+    width: 45%;
+}
+}

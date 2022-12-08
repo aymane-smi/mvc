@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap');
+:root{
+    --white: #FFFFFF;
+    --black: 000000;
+    --gray: rgba(135, 139, 140, 0.37);
+    --normal-gray: #ADADAD;
+    --orange: #E99C2E;
+    --title: 24px;
+    --subTitle: 22px;
+    --normal: 20px;
+}
+@media screen and (min-width: 1000px){
+    *{
+        padding: 0;
+        margin: 0;
+        font-family: 'Raleway';
+    }
+    .xmark{
+        display: none;
+    }
+    body{
+        background: var(--gray);
+        width: 100vw;
+        box-sizing: border-box;
+        height: 100vh;
+        overflow-x: hidden;
+    }
+    /*HEADER STYLING*/
+    .logo{
+        width: 186px;
+        height: 128px;
+    }
+
+    header{
+        background-image: url("../../assets/unsplash_fQ2XuWjSzfE.png");
+        background-position: left;
+        background-size: cover;
+
+    }
+    
+    nav{
+        display: flex;
+        align-items: center;
+        padding: 0;
+    }
+
+    .nav-menu{
+        width: 70%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        font-weight: bold;
+        font-size: var(--normal);
+     }
+     .fa-bars{
+        visibility: hidden;
+    }
+
+     nav .nav-icons{
+        display: flex;
+        justify-content: flex-end;
+        gap: 69px;
+        align-items: center;
+        width: 30%;
+     }
+
+     .fa-cart-shopping{
+        margin-right: 53px;
+     }
+
+     header p:first-of-type{
+        font-weight: bold;
+        font-size: var(--title);
+        color: var(--white);
+        margin-top: 100px;
+     }
+
+     header p:last-of-type{
+        font-weight: bold;
+        font-size: var(--subTitle);
+        color: var(--orange);
+        margin: 30px 0;
+        margin-bottom: 80px;
+     }
+
+     .header-text{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+     }
+
+    /*OUR PRODUCTS STYLING*/
+
+    .more-title{
+        margin: 40px 0;
+        text-align: center;
+        font-weight: bold;
+        font-size: var(--subTitle);
+        color: var(--white);
+    }
+
+    .row{
+        display: grid;
+        grid-template-columns: 640px 1fr;
+        background: var(--white);
+        width: 100%;
+        padding: 0;
+        height: 469px;
+    }
+    .row-reverse{
+        display: grid;
+        grid-template-columns: 640px 640px;
+        background: var(--white);
+        width: 100%;
+        height: 469px;
+    }
+
+    .image-column{
+        width: 640px;
+        height: 469px;
+    }
+
+    .column-text{
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+        margin-left: 40px;
+        
+    }
+    .column-text > p{
+        color: var(--black);
+        font-size: var(--title);
+        font-weight: bold;
+        margin-top: 20px;
+    }
+
+    button.more{
+        border: none;
+        background: var(--orange);
+        color: var(--white);
+        margin-top: 30px;
+        font-weight: medium;
+        font-size: var(--title);
+        width: 171px;
+        height: 61px;
+        transition: all 600ms ease-in-out;
+    }
+
+    button.more:hover{
+        border: 1px solid var(--orange);
+        color: var(--orange);
+        background: var(--white);
+    }
+
+    /*CLIENTS STYLING*/
+
+    .clients-title{
+        margin: 40px 0;
+        text-align: center;
+        font-weight: bold;
+        font-size: var(--subTitle);
+        color: var(--white);
+    }
+
+    .clients-carousel{
+        background-color: var(--white);
+        padding: 10px;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .clients-carousel svg{
+        animation: clients 10s linear infinite;
+    }
+
+    svg{
+        fill: var(--normal-gray);
+        width: 70px;
+        height: 70px;
+    }
+
+    footer{
+        background-color: var(--white);
+        padding: 10px;
+        margin-top: 60px;
+    }
+
+    @keyframes clients{
+        0%{
+            left: 0%;
+        }
+        50%{
+            left: 50%;
+        }
+        100%{
+            left: -200%;
+        }
+    }
+
+    /*FOOTER STYLING*/
+
+    footer{
+        display: flex; 
+        justify-content: center;
+        align-content: center;
+    }
+    .container-logo{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 25px;
+        justify-content: space-between;
+        color: var(--gray);
+    }
+    .container-logo > p{
+        font-size: 15px;
+        font-weight: bold;
+        margin: 20px;
+    }
+    #sink{
+        color: var(--normal-gray);
+    }
+    #mnt{
+        color: var(--orange);
+    }
+}
