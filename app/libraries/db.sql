@@ -1,0 +1,18 @@
+DROP DATABASE IF EXISTS sinkmkt;
+
+CREATE DATABASE sinkmkt;
+
+USE sinkmkt;
+
+CREATE TABLE Admin(
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    username VARCHAR(30) NOT NULL,
+    password VARCHAR(150) NOT NULL
+);
+
+
+CREATE TABLE Article(
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nom VARCHAR(50) NOT NULL,
+    prix DECIMAL(4, 2) NOT NULL
+);
