@@ -55,129 +55,26 @@
         <section class="items">
             <!--first row-->
             <div class="row-collections">
-                <div class="item">
-                    <img src="./assets/unsplash_nLDFyiF6gmA.png" alt="two dark lamps with an artistic deign" />
-                    <div class="hovering-info">
-                        <p>artistic lamps</p>
-                        <p>500 usd</p>
-                        <div>
-                            <i class="fa-solid fa-cart-shopping cart"></i>
-                        </div>
-                        <div class="more">
-                            More
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="./assets/unsplash_wsvCC6UyKjs.png" alt="tall lamp" />
-                    <div class="hovering-info">
-                        <p>artistic lamps</p>
-                        <p>500 usd</p>
-                        <div>
-                            <i class="fa-solid fa-cart-shopping cart"></i>
-                        </div>
-                        <div class="more">
-                            More
+                <?php
+                if (is_array($data["items"]) || is_object($data["items"]))
+                    foreach ($data["items"] as $item) {
+                ?>
+                    <div class="item">
+                        <img src="./assets/<?php echo $item->img; ?>" alt="two dark lamps with an artistic deign" />
+                        <div class="hovering-info">
+                            <p><?php echo $item->nom; ?></p>
+                            <p><?php echo $item->prix; ?> usd</p>
+                            <div>
+                                <i class="fa-solid fa-cart-shopping cart"></i>
+                            </div>
+                            <div class="more">
+                                More
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="item">
-                    <img src="./assets/jacek-poblocki-6Qin0S4TOt8-unsplash 1.png" alt="two lamps turned on" />
-                    <div class="hovering-info">
-                        <p>artistic lamps</p>
-                        <p>500 usd</p>
-                        <div>
-                            <i class="fa-solid fa-cart-shopping cart"></i>
-                        </div>
-                        <div class="more">
-                            More
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--row 2-->
-            <div class="row-collections">
-                <div class="item">
-                    <img src="./assets/unsplash_wlrGF9qkXFw.png" alt="sofa in an empty room with lighting" />
-                    <div class="hovering-info">
-                        <p>simple sofa</p>
-                        <p>700 usd</p>
-                        <div>
-                            <i class="fa-solid fa-cart-shopping cart"></i>
-                        </div>
-                        <div class="more">
-                            More
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="./assets/unsplash_BFKpXaBniro.png" alt="classic style sofa" />
-                    <div class="hovering-info">
-                        <p>simple sofa</p>
-                        <p>700 usd</p>
-                        <div>
-                            <i class="fa-solid fa-cart-shopping cart"></i>
-                        </div>
-                        <div class="more">
-                            More
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="./assets/unsplash_v_sGtS8SnzI.png" alt="gray and black sofa" />
-                    <div class="hovering-info">
-                        <p>simple sofa</p>
-                        <p>700 usd</p>
-                        <div>
-                            <i class="fa-solid fa-cart-shopping cart"></i>
-                        </div>
-                        <div class="more">
-                            More
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--row 3-->
-            <div class="row-collections">
-                <div class="item">
-                    <img src="./assets/unsplash_TeoW-VdvoKU.png" alt="flat black chair in the corne" />
-                    <div class="hovering-info">
-                        <p>modern chair</p>
-                        <p>200 usd</p>
-                        <div>
-                            <i class="fa-solid fa-cart-shopping cart"></i>
-                        </div>
-                        <div class="more">
-                            More
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="./assets/unsplash_2xaF4TbjXT0.png" alt="chairs in the conference style" />
-                    <div class="hovering-info">
-                        <p>modern chair</p>
-                        <p>200 usd</p>
-                        <div>
-                            <i class="fa-solid fa-cart-shopping cart"></i>
-                        </div>
-                        <div class="more">
-                            More
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="./assets/egor-myznik-p0dmq0NiFWk-unsplash 1.png" alt="kitchen modern chairs" />
-                    <div class="hovering-info">
-                        <p>modern chair</p>
-                        <p>200 usd</p>
-                        <div>
-                            <i class="fa-solid fa-cart-shopping cart"></i>
-                        </div>
-                        <div class="more">
-                            More
-                        </div>
-                    </div>
-                </div>
+                <?php
+                    }
+                ?>
             </div>
         </section>
     </main>

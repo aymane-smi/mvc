@@ -32,4 +32,10 @@ class Login extends Controller
             }
         }
     }
+
+    public function logout()
+    {
+        session_destroy();
+        header("Location: /Login");
+    }
 }

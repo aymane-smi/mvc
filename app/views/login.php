@@ -35,8 +35,6 @@ session_start();
                 }
                 if ($_SESSION["login_error"])
                     echo "<p class='text-danger'>{$_SESSION['login_error']}</p>";
-                else
-                    echo "error";
                 ?>
 
                 <button class="btn btn-sm btn-success">Authentifier</button>

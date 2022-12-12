@@ -38,28 +38,21 @@ class Article
             return false;
     }
 
-    public function editArticle($id, $nom = null, $prix = null, $img = null)
+    public function editArticle($id, $nom, $prix, $img = null)
     {
         $key = false;
-        if (!is_null($nom)) {
-            $this->db->query("UPDATE Article SET nom = :nom WHERE id = :id");
-            $this->db->bind(":nom", $nom);
-            $this->db->bind(":id", $id);
-            $this->db->execute();
-            $key = true;
-        } else if (!is_null($prix)) {
-            $this->db->query("UPDATE Article SET prix = :prix WHERE id = :id");
-            $this->db->bind(":prix", $prix);
-            $this->db->bind(":id", $id);
-            $this->db->execute();
-            $key = true;
-        } else if (!is_null($img)) {
+        $this->db->query("UPDATE Article SET nom = :nom, prix = :prix WHERE id = :id");
+        $this->db->bind(":nom", $nom);
+        $this->db->bind(":id", $id);
+        $this->db->bind(":prix", $prix);
+        $this->db->execute();
+        if (!is_null($img)) {
             $this->db->query("UPDATE Article SET img = :img WHERE id = :id");
             $this->db->bind(":img", $img);
             $this->db->bind(":id", $id);
             $this->db->execute();
-            $key = true;
         }
+        $key = true;
 
         return $key ? "article updated" : false;
     }

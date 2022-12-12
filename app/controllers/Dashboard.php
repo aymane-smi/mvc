@@ -6,11 +6,11 @@ class Dashboard extends Controller
 
     public function __construct()
     {
-        // if (isset($_SESSION["id"])) {
-        //     $this->ArticleModel = $this->model('Article');
-        // } else {
-        //     header("Location: /Login");
-        // }
+        if (isset($_SESSION["id"])) {
+            $this->ArticleModel = $this->model('Article');
+        } else {
+            header("Location: /Login");
+        }
         $this->ArticleModel = $this->model('Article');
     }
 
@@ -33,12 +33,18 @@ class Dashboard extends Controller
     {
         $item = $this->ArticleModel->getById($id);
         $this->ArticleModel->removeById($id);
-        unlink("../../public/assets/{$item->img}");
+        unlink("../public/assets/{$item->img}");
         header("Location: /Dashboard");
     }
 
     public function edit($id)
     {
-        echo $id;
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            $this->ArticleModel->editArticle($_POST["nom"], $_POST["prix"], $_POST["img"]);
+            header("Location: /Dashboard");
+        } else {
+            $data['item'] = $this->ArticleModel->getById($id);
+            $this->view("edit", $data["item"]);
+        }
     }
 }

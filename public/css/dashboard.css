@@ -42,9 +42,19 @@ nav p{
     margin-bottom: 20px;
 }
 
+a .home{
+    text-decoration: none !important;
+    color: black !important;
+}
+
+a .home:active{
+    color: black !important;
+    text-decoration: none !important;
+}
+
 .item img{
     height: 100%;
-    width: 80%;
+    width: 100%;
 }
 
 .info-action{
@@ -86,4 +96,20 @@ nav p{
     justify-content: flex-start;
     margin-bottom: 20px;
     width: 60%;
+}
+
+.edit-container{
+    width: 40%;
+    margin: 40px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+.edit-container .label{
+    width: 80%;
+}
+
+.edit-image{
+    height: 40%;
 }
